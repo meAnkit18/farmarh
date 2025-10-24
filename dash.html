@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome, <span id="farmer-name">Farmer</span></h1>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Cards -->
+        <div class="card">
+            <h3>Land Size</h3>
+            <p id="land-size">0 Acres</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Crops</h3>
+            <p id="total-crops">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Yield Prediction</h3>
+            <p id="yield-prediction">0 Tons</p>
+        </div>
+
+        <div class="card">
+            <h3>Live Farm Status</h3>
+            <p id="live-status">All Healthy 🌱</p>
+        </div>
+
+        <!-- Chart for crop distribution -->
+        <div class="chart-container">
+            <h3>Crop Distribution</h3>
+            <canvas id="cropChart"></canvas>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

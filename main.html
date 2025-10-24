@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmFusion2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--nav-->
+    <div class="nav">
+        <a href="dash.html"><img class="img1"
+            src="https://play-lh.googleusercontent.com/ZgJnixafLYkJWHMgcA9wV2t8q8RiX9kWdtkxOqKVTeFmGwn4qb5e6GwvK0nHQVPmNuTl"
+            alt="farmerpic"></a>
+        <ul>
+            <li><a href="dash.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#monthYear">Calendar</a></li>
+            <li><a href="#yield">Yield Pred</a></li>
+            <li><a href="#diseases">Disease Pred</a></li>
+        </ul>
+    </div>
+
+    <!--section-->
+    <div id="about" class="about-section">
+        <div class="main-content">
+            <h2>About Us</h2>
+            <p>
+                <strong>FarmFusion 2.0</strong> is an AI-powered smart farming platform designed to help farmers make
+                better
+                decisions — from what to grow and when to water, to where to sell. <br><br>
+
+                By combining <strong>AI</strong>, <strong>IoT</strong>, and <strong>real-time data</strong>, we provide
+                intelligent crop and disease detection, smart weather alerts, live market prices, and multilingual voice
+                support — all in one simple app. <br><br>
+
+                Our mission is to make smart, sustainable farming accessible to every farmer — improving yield, income,
+                and rural growth through data-driven insights.
+            </p>
+        </div>
+    </div>
+
+    <div id="calendar-container">
+        <h2 id="monthYear"></h2>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <!--yield pred-->
+    <div id="yield">
+        <h2>YEILD PREDICTION</h2>
+        <div class="f1">
+            <div class="option1">
+                <label for="crop-input"></label>
+                <input type="text" name="crop" class="crop-input" placeholder="Enter crop name">
+            </div>
+            <div class="option2">
+                <label for="crop-input"></label>
+                <input type="text" name="crop" class="crop-input" placeholder="Enter land size">
+            </div>
+            <div class="option3">
+                <label for="crop-input"></label>
+                <input type="text" name="crop" class="crop-input" placeholder="Enter the region">
+        </div>
+    </div>
+    <input type="button" value="Submit">
+    </div>
+    <!--diease prediction-->
+    <div id="diseases">
+        <h1 style="color: grey;">Dieases part</h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

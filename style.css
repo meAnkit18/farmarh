@@ -1,0 +1,227 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F4FBEA;
+    color: #2E382E;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    background-color: #baff5a;
+}
+
+.nav {
+    margin: 0;
+    height: 80px;
+    background-color: greenyellow;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    right: 10px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #2E382E;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: white;
+    transition: width 0.5s ease;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+.about-section {
+    background-image: url("/pictures/Gemini_Generated_Image_gafyh5gafyh5gafy.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(60%);
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 80vh;
+}
+
+.main-content {
+    max-width: 900px;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 32px;
+    color: #2E7D32;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main-content p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.main-content strong {
+    color: #388E3C;
+}
+
+#calendar-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #acf0ae;
+    color: #000000;
+    border-radius: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #5e5757;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 5px; 
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+}
+
+td.today {
+    background-color: #ffeb3b;
+}
+
+
+#yield {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.548);
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  border-radius: 20px;
+}
+
+#yield h2 {
+  font-size: 2.5em;
+  color: #a8ff3e;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+#yield .f1 {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#yield .f1 div {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crop-input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.crop-input:focus {
+  box-shadow: 0 0 10px #a8ff3e;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+#yield input[type="button"] {
+  margin-top: 20px;
+  padding: 12px 40px;
+  background: #a8ff3e;
+  border: none;
+  border-radius: 25px;
+  color: #000;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yield input[type="button"]:hover {
+  background: #baff5a;
+  transform: scale(1.05);
+}
+
+#diseases{
+    height: 100vh;
+    background-color: #2E7D32;
+    border-radius: 20px;
+    text-align: center;
+}
