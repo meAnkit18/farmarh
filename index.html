@@ -2,90 +2,338 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FarmFusion2</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmFusion 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ====== Basic Page Styling ====== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f7f8fa;
+      color: #222;
+    }
+
+    /* ====== Navigation Bar ====== */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2e7d32;
+      padding: 10px 20px;
+    }
+
+    .nav img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .nav ul li a:hover {
+      color: #b9f6ca;
+    }
+
+    /* ====== About Section ====== */
+    .about-section {
+      padding: 60px 10%;
+      background-color: #e8f5e9;
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      color: #1b5e20;
+    }
+
+    .about-section p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    /* ====== Calendar Section ====== */
+    #calendar-container {
+      text-align: center;
+      padding: 40px 10%;
+    }
+
+    #calendar {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    #calendar th,
+    #calendar td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #calendar th {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    /* ====== Yield Prediction ====== */
+    #yield {
+      padding: 50px 10%;
+      background-color: #f1f8e9;
+      text-align: center;
+    }
+
+    #yield h2 {
+      color: #2e7d32;
+    }
+
+    .f1 {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .crop-input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    input[type="button"] {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="button"]:hover {
+      background-color: #2e7d32;
+    }
+
+    /* ====== Disease Prediction Section ====== */
+    #diseases {
+      padding: 60px 10%;
+      text-align: center;
+      background-color: #f9fbe7;
+    }
+
+    #diseases h1 {
+      color: grey;
+    }
+
+    #imageInput {
+      margin-top: 15px;
+    }
+
+    #uploadBtn {
+      background-color: #43a047;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    #uploadBtn:hover {
+      background-color: #2e7d32;
+    }
+
+    #loading {
+      color: orange;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    #output {
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 
 <body>
-    <!--nav-->
-    <div class="nav">
-        <a href="dash.html"><img class="img1"
-            src="https://play-lh.googleusercontent.com/ZgJnixafLYkJWHMgcA9wV2t8q8RiX9kWdtkxOqKVTeFmGwn4qb5e6GwvK0nHQVPmNuTl"
-            alt="farmerpic"></a>
-        <ul>
-            <li><a href="dash.html">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#monthYear">Calendar</a></li>
-            <li><a href="#yield">Yield Pred</a></li>
-            <li><a href="#diseases">Disease Pred</a></li>
-        </ul>
-    </div>
+  <!-- ====== Navigation Bar ====== -->
+  <div class="nav">
+    <a href="dash.html">
+      <img src="https://play-lh.googleusercontent.com/ZgJnixafLYkJWHMgcA9wV2t8q8RiX9kWdtkxOqKVTeFmGwn4qb5e6GwvK0nHQVPmNuTl"
+        alt="farmerpic">
+    </a>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#calendar-container">Calendar</a></li>
+      <li><a href="#yield">Yield Prediction</a></li>
+      <li><a href="#diseases">Disease Prediction</a></li>
+    </ul>
+  </div>
 
-    <!--section-->
-    <div id="about" class="about-section">
-        <div class="main-content">
-            <h2>About Us</h2>
-            <p>
-                <strong>FarmFusion 2.0</strong> is an AI-powered smart farming platform designed to help farmers make
-                better
-                decisions — from what to grow and when to water, to where to sell. <br><br>
+  <!-- ====== About Section ====== -->
+  <div id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>
+      <strong>FarmFusion 2.0</strong> is an AI-powered smart farming platform designed to help farmers make better
+      decisions — from what to grow and when to water, to where to sell. <br><br>
 
-                By combining <strong>AI</strong>, <strong>IoT</strong>, and <strong>real-time data</strong>, we provide
-                intelligent crop and disease detection, smart weather alerts, live market prices, and multilingual voice
-                support — all in one simple app. <br><br>
+      By combining <strong>AI</strong>, <strong>IoT</strong>, and <strong>real-time data</strong>, we provide
+      intelligent crop and disease detection, smart weather alerts, live market prices, and multilingual voice
+      support — all in one simple app. <br><br>
 
-                Our mission is to make smart, sustainable farming accessible to every farmer — improving yield, income,
-                and rural growth through data-driven insights.
-            </p>
-        </div>
-    </div>
+      Our mission is to make smart, sustainable farming accessible to every farmer — improving yield, income,
+      and rural growth through data-driven insights.
+    </p>
+  </div>
 
-    <div id="calendar-container">
-        <h2 id="monthYear"></h2>
-        <table id="calendar">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+  <!-- ====== Calendar Section ====== -->
+  <div id="calendar-container">
+    <h2 id="monthYear"></h2>
+    <table id="calendar">
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
-    <!--yield pred-->
-    <div id="yield">
-        <h2>YEILD PREDICTION</h2>
-        <div class="f1">
-            <div class="option1">
-                <label for="crop-input"></label>
-                <input type="text" name="crop" class="crop-input" placeholder="Enter crop name">
-            </div>
-            <div class="option2">
-                <label for="crop-input"></label>
-                <input type="text" name="crop" class="crop-input" placeholder="Enter land size">
-            </div>
-            <div class="option3">
-                <label for="crop-input"></label>
-                <input type="text" name="crop" class="crop-input" placeholder="Enter the region">
-        </div>
+  <!-- ====== Yield Prediction ====== -->
+  <div id="yield">
+    <h2>Yield Prediction</h2>
+    <div class="f1">
+      <input type="text" class="crop-input" placeholder="Enter crop name">
+      <input type="text" class="crop-input" placeholder="Enter land size (in acres)">
+      <input type="text" class="crop-input" placeholder="Enter your region">
     </div>
     <input type="button" value="Submit">
-    </div>
-    <!--diease prediction-->
-    <div id="diseases">
-        <h1 style="color: grey;">Dieases part</h1>
-    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- ====== Disease Prediction ====== -->
+  <div id="diseases">
+    <h1>Disease Prediction</h1>
+    <h2>Upload Leaf Image</h2>
+
+    <input type="file" id="imageInput" accept="image/*" />
+    <button id="uploadBtn">Upload</button>
+
+    <div id="loading" style="display:none;">Predicting... please wait</div>
+    <pre id="output"></pre>
+  </div>
+
+  <!-- ====== Gradio Client Integration ====== -->
+  <script type="module">
+    import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/+esm";
+
+    let selectedFile = null;
+
+    document.getElementById("imageInput").addEventListener("change", (e) => {
+      selectedFile = e.target.files[0];
+      document.getElementById("output").innerText = "";
+    });
+
+    document.getElementById("uploadBtn").addEventListener("click", async () => {
+      if (!selectedFile) {
+        alert("Please select an image first!");
+        return;
+      }
+
+      document.getElementById("loading").style.display = "block";
+
+      try {
+        const client = await Client.connect("ankit1842/plant_disease_model");
+        const result = await client.predict("/predict", { img: selectedFile });
+
+        console.log(result.data);
+        document.getElementById("output").innerText =
+          JSON.stringify(result.data, null, 2);
+      } catch (error) {
+        console.error("Error:", error);
+        document.getElementById("output").innerText =
+          "Error occurred: " + error.message;
+      } finally {
+        document.getElementById("loading").style.display = "none";
+      }
+    });
+  </script>
+
+  <!-- ====== Calendar Script ====== -->
+  <script>
+    const monthYear = document.getElementById("monthYear");
+const calendarBody = document.querySelector("#calendar tbody");
+
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const today = date.getDate(); // current day
+
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+monthYear.innerText = `${monthNames[month]} ${year}`;
+
+function generateCalendar(year, month) {
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let html = "<tr>";
+
+  // Empty cells before first day
+  for (let i = 0; i < firstDay; i++) html += "<td></td>";
+
+  // Days
+  for (let day = 1; day <= daysInMonth; day++) {
+    const isToday = day === today ? "today" : "";
+    const dayOfWeek = (firstDay + day - 1) % 7;
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6 ? "weekend" : "";
+
+    if ((firstDay + day - 1) % 7 === 0 && day !== 1) html += "</tr><tr>";
+    html += `<td class="${isToday} ${isWeekend}">${day}</td>`;
+  }
+
+  html += "</tr>";
+  calendarBody.innerHTML = html;
+}
+generateCalendar(year, month);
+  </script>
 </body>
 
 </html>
